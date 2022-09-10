@@ -1,0 +1,12 @@
+body{
+    /* background: blue; */
+}
+
+li{
+    list-style: none;
+}
+
+.post{
+    color: rgb(29, 27, 27);
+    text-decoration: none;
+}

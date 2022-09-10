@@ -1,0 +1,28 @@
+{% extends 'blogs/base.html' %}
+
+{% load static %}
+{% block content %}
+<!-- TODO: do the slice and concat using views -->
+<p>Posts:</p>
+<ul>
+    {% for post in posts %}
+    <p>
+        <li><a href="{% url 'post' post.id %}">{{ post.title }}</a></li>
+        <li>{{ post.date_added }}</li>
+        <!-- <li>{{ post.text|linebreaks|slice:"100"|add:"..." }}</li> -->
+        <li>{{ post.text|slice:"100" }}</li>
+        {% if post.text|length > 100 %}
+        {{ "..." }}
+        {% endif %}
+    </p>
+    {% empty %}
+    <li>No posts added</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+
+
+
+

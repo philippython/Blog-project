@@ -1,0 +1,15 @@
+{% extends 'blogs/base.html' %}
+
+{% load static %}
+{% block content %}
+
+<p>Posts:</p>
+
+{% if post.text %}
+<p>{{ post.text }}</p>
+{% else %}
+<p>No post added yet</p>
+{% endif %}
+<p><a href="{% url 'edit_post_text' post.id %}">Edit post</a></p>
+
+{% endblock %}
